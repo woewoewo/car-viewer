@@ -1,0 +1,7 @@
+allowBuilds:
+  '@parcel/watcher': false
+  esbuild: false
+  sharp: false
+minimumReleaseAgeExclude:
+  - astro@6.3.5
+  - '@astrojs/netlify@7.0.10'
