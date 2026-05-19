@@ -1,0 +1,534 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Sample data provided by the user
+const data = {
+  "overview": {
+    "id": {
+      "dealerId": "230",
+      "vehicleId": "02026",
+      "dealerIdNumber": 230,
+      "vehicleIdNumber": 2026,
+      "fiveDigitsDealerId": "00230",
+      "fiveDigitsVehicleId": "02026"
+    },
+    "crossId": "280745",
+    "header": "Audi A6 Avant",
+    "subHeader": "e-tron quattro",
+    "powerKw": 315,
+    "powerPs": 428,
+    "maxNetPowerElectricKw": 315,
+    "maxNetPowerElectricPs": 428,
+    "initialRegistrationDate": "2026-01-21",
+    "mileage": 4685,
+    "price": 86980,
+    "entrepreneurPrice": null,
+    "priceOfferOfTheWeek": null,
+    "netSalesPrice": 72483,
+    "newSalesListPrice": null,
+    "imageUrls": [
+      "https://vmscdn.porscheinformatik.com/s2/at/2522863A42AF53025A9AA1D2B4E9FF76/images/86c693cf-7e56-4f7f-ae87-2207050cabac",
+      "https://vmscdn.porscheinformatik.com/s2/at/2522863A42AF53025A9AA1D2B4E9FF76/images/676e8f25-8d19-4c07-8776-8cdce7eb46de",
+      "https://vmscdn.porscheinformatik.com/s2/at/2522863A42AF53025A9AA1D2B4E9FF76/images/07594063-2cf8-43e0-983a-c9fa2a9835a4",
+      "https://vmscdn.porscheinformatik.com/s2/at/2522863A42AF53025A9AA1D2B4E9FF76/images/4d7bd95e-be29-40ec-bfee-7daab7cba06a",
+      "https://vmscdn.porscheinformatik.com/s2/at/2522863A42AF53025A9AA1D2B4E9FF76/images/0f39bae7-88ab-4a4e-b23f-f04acfab2405",
+      "https://vmscdn.porscheinformatik.com/s2/at/2522863A42AF53025A9AA1D2B4E9FF76/images/5b26ef86-3442-496e-b9e7-a6703e2da500",
+      "https://vmscdn.porscheinformatik.com/s2/at/2522863A42AF53025A9AA1D2B4E9FF76/images/3c6c556a-642f-4eb9-9b62-c28f3100980c",
+    ],
+    "financeable": true,
+    "vehicleLocation": {
+      "name": "Porsche St. Pölten",
+      "street": "Schanze 2",
+      "postalCode": "3100",
+      "city": "St. Pölten"
+    },
+    "dealerRatings": 589,
+    "dealerRatingAverage": 4.800000190734863,
+    "dealerPhoneNumber": "+43 505 91123",
+    "dealerCallTrackingNumber": "+43274244357",
+    "fleetVehicle": false,
+    "dealerRatingUrl": "https://www.caradvisor.at/d/betrieb/porsche-st-poelten/AT-230",
+    "reserved": false,
+    "reservable": true,
+    "brand": "Audi",
+    "model": "Audi A6 Avant",
+  },
+  "dealerDetail": {
+    "vehicleLocation": {
+      "name": "Porsche St. Pölten",
+      "street": "Schanze 2",
+      "postalCode": "3100",
+      "city": "St. Pölten"
+    },
+    "dealerRatings": 589,
+    "dealerRatingAverage": 4.800000190734863,
+    "openingTimes": [
+      "Mo-Fr: 8:00 - 17:00 Uhr",
+      "Sa: 9:00 - 12:00 Uhr (SEAT Gebäude | Schanze 2)"
+    ],
+    "websiteUrl": "https://www.porscheinterauto.at",
+    "employees": [
+      {
+        "id": 174850,
+        "fullname": "Bernhard Ruß",
+        "telephoneNumber": "+43 505 91123 240",
+        "mobileNumber": null,
+        "imageUrl": "https://www.dasweltauto.at/api/locales/de_AT/dealers/employee/images/174850",
+        "jobDescription": "Markenleitung Audi"
+      },
+      {
+        "id": 188290,
+        "fullname": "Julian Rainer",
+        "telephoneNumber": "+43 505 91123 241",
+        "mobileNumber": null,
+        "imageUrl": "https://www.dasweltauto.at/api/locales/de_AT/dealers/employee/images/188290",
+        "jobDescription": "Verkauf Audi"
+      }
+    ],
+    "dealerRatingUrl": "https://www.caradvisor.at/d/betrieb/porsche-st-poelten/AT-230",
+    "dealerHouseImage": "https://static.autohaus.at/@@poi.imageproxy/93e43858f3f14cebbfe3ce95a7cb5bb5"
+  },
+  "equipment": {
+    "standard": [
+      {
+        "text": "Verbandmaterial, Warndreieck & Warnweste",
+        "hoverText": "",
+        "code": "1T9"
+      },
+      {
+        "text": "4-Wege-Lendenwirbelstütze f. Vordersitze",
+        "hoverText": "Elektrisch, horizontal und vertikal in vier Richtungen individuell einstellbar",
+        "code": "7P1"
+      },
+      {
+        "text": "Räder \"5-Arm-Dynamik\" 8J/8,5Jx19",
+        "hoverText": "Leichtmetallräder, platingrau",
+        "code": "60Y"
+      },
+      {
+        "text": "LED-Scheinwerfer",
+        "hoverText": "Die LED-Scheinwerfer erzeugen eine tageslichtähnliche Ausleuchtung",
+        "code": "8IT"
+      },
+      {
+        "text": "Klimaautomatik",
+        "hoverText": "3-Zonen-Komfortklimaautomatik",
+        "code": "9AU"
+      }
+    ],
+    "extra": [
+      {
+        "text": "Panorama-Glasdach",
+        "hoverText": "mit schaltbarer Transparenz",
+        "code": "3FP"
+      },
+      {
+        "text": "Matrix LED Scheinwerfer",
+        "hoverText": "Die Audi Matrix LED-Technologie ermöglicht eine präzise Ausleuchtung",
+        "code": "8G4"
+      },
+      {
+        "text": "Sportlenkrad, 3-Speichen",
+        "hoverText": "oben und unten abgeflacht, mit Multifunktion und Schaltwippen",
+        "code": "1XY"
+      }
+    ]
+  },
+  "technicalData": {
+    "colorText": "weiss - metallic",
+    "initialRegistrationDate": "2026-01-21",
+    "mileage": 4685,
+    "powerKw": 315,
+    "powerPs": 428,
+    "maxNetPowerElectricPs": 428,
+    "maxNetPowerElectricKw": 315,
+    "fuelText": "Elektro",
+    "combinedConsumption": 17.36,
+    "consumptionUnitCode": "kWh/100km",
+    "co2Emission": 0,
+    "emissionClassText": "EU6",
+    "driveText": "Allrad",
+    "doors": 4,
+    "seats": 5,
+    "previousOwners": 1,
+    "bodyText": "Kombi",
+    "weightGross": 2870,
+    "weightNet": 2370,
+    "gearTypeText": "Automatik",
+    "vin": "WAUZZZGH2SA008222",
+    "electricRange": 612
+  },
+  "campaigns": {
+    "campaigns": [
+      {
+        "discount": 2000,
+        "title": "Porsche Bank Bonus",
+        "text": "Finanzieren Sie Ihren Audi Jungwagen über die Porsche Bank und profitieren Sie von € 2.000,00 Bonus."
+      },
+      {
+        "discount": 500,
+        "title": "Porsche Bank Versicherungsbonus",
+        "text": "Bei Abschluss einer KASKO-Versicherung über die Porsche Bank Versicherung profitieren Sie von € 500,- Bonus."
+      }
+    ],
+    "discountCalculation": {
+      "minimalPrice": 84480,
+      "basePrice": 86980,
+      "totalDiscount": 2500
+    }
+  },
+  "financeOptions": {
+    "leasingRate": 703.17,
+    "creditRate": 1101.82
+  },
+  "breadcrumbs": [
+    { "label": "Home", "path": "/" },
+    { "label": "Audi", "path": "/s/audi" },
+    { "label": "Audi A6 Avant", "path": "/s/audi/audi-a6-avant" }
+  ]
+};
+
+const { overview, technicalData, equipment, dealerDetail, campaigns } = data;
+
+function formatPrice(price: number) {
+	return new Intl.NumberFormat('de-AT', { style: 'currency', currency: 'EUR' }).format(price);
+}
+
+function formatDate(dateString: string) {
+	return new Date(dateString).toLocaleDateString('de-AT');
+}
+
+function formatImageUrl(url: string, resolution: number = 1920): string {
+	return `${url}/webp/${resolution}`;
+}
+---
+
+<Layout>
+	<div class="min-h-screen bg-gray-50">
+		<!-- Demo Banner -->
+		<div class="bg-yellow-50 border-b-2 border-yellow-200">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+				<p class="text-center text-yellow-800">
+					🎨 <strong>Demo Page</strong> - This is showing the sample JSON data you provided, beautifully formatted!
+				</p>
+			</div>
+		</div>
+
+		<!-- Hero Section with Image Gallery -->
+		<div class="bg-white shadow-sm">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+				<!-- Breadcrumbs -->
+				<nav class="text-sm mb-4">
+					<ol class="flex items-center gap-2 text-gray-600">
+						{data.breadcrumbs?.map((crumb: any, index: number) => (
+							<li class="flex items-center gap-2">
+								{index > 0 && <span>/</span>}
+								<a href={crumb.path} class="hover:text-gray-900">{crumb.label}</a>
+							</li>
+						))}
+					</ol>
+				</nav>
+
+				<!-- Main Header -->
+				<div class="mb-6">
+					<h1 class="text-4xl font-bold text-gray-900 mb-2">
+						{overview.header} {overview.subHeader}
+					</h1>
+					<p class="text-xl text-gray-600">
+						{technicalData.powerPs} PS ({technicalData.powerKw} kW) • {technicalData.fuelText} • {technicalData.gearTypeText}
+					</p>
+				</div>
+
+				<!-- Image Gallery -->
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-8">
+					<div class="lg:col-span-2">
+						<img
+							src={formatImageUrl(overview.imageUrls[0], 1920)}
+							alt={overview.header}
+							class="w-full h-96 object-cover rounded-lg shadow-md"
+						/>
+					</div>
+					<div class="grid grid-cols-3 gap-4">
+						{overview.imageUrls.slice(1, 7).map((url: string) => (
+							<img
+								src={formatImageUrl(url, 768)}
+								alt={overview.header}
+								class="w-full h-32 object-cover rounded-lg shadow-sm cursor-pointer hover:opacity-75 transition"
+							/>
+						))}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Main Content -->
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+			<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+				<!-- Left Column: Details -->
+				<div class="lg:col-span-2 space-y-6">
+					<!-- Price & Key Info Card -->
+					<div class="bg-white rounded-lg shadow-md p-6">
+						<div class="flex justify-between items-start mb-6">
+							<div>
+								<p class="text-sm text-gray-600 mb-1">Preis</p>
+								<p class="text-4xl font-bold text-gray-900">{formatPrice(overview.price)}</p>
+								{campaigns?.discountCalculation?.totalDiscount > 0 && (
+									<p class="text-sm text-green-600 mt-1">
+										Sparpotential: {formatPrice(campaigns.discountCalculation.totalDiscount)}
+									</p>
+								)}
+							</div>
+							{overview.financeable && data.financeOptions && (
+								<div class="text-right">
+									<p class="text-sm text-gray-600">Leasing ab</p>
+									<p class="text-2xl font-semibold text-blue-600">
+										{formatPrice(data.financeOptions.leasingRate)}/Monat
+									</p>
+								</div>
+							)}
+						</div>
+
+						<div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t">
+							<div>
+								<p class="text-xs text-gray-500 mb-1">Erstzulassung</p>
+								<p class="font-semibold">{formatDate(technicalData.initialRegistrationDate)}</p>
+							</div>
+							<div>
+								<p class="text-xs text-gray-500 mb-1">Kilometerstand</p>
+								<p class="font-semibold">{technicalData.mileage.toLocaleString()} km</p>
+							</div>
+							<div>
+								<p class="text-xs text-gray-500 mb-1">Leistung</p>
+								<p class="font-semibold">{technicalData.powerPs} PS</p>
+							</div>
+							<div>
+								<p class="text-xs text-gray-500 mb-1">Kraftstoff</p>
+								<p class="font-semibold">{technicalData.fuelText}</p>
+							</div>
+						</div>
+
+						{technicalData.fuelText === 'Elektro' && technicalData.electricRange && (
+							<div class="mt-4 p-4 bg-green-50 rounded-lg">
+								<p class="text-sm font-semibold text-green-800 mb-1">Elektrische Reichweite</p>
+								<p class="text-2xl font-bold text-green-900">{technicalData.electricRange} km</p>
+							</div>
+						)}
+					</div>
+
+					<!-- Technical Data -->
+					<div class="bg-white rounded-lg shadow-md p-6">
+						<h2 class="text-2xl font-bold mb-4">Technische Daten</h2>
+						<div class="grid grid-cols-2 gap-4">
+							<div class="space-y-3">
+								<div>
+									<p class="text-sm text-gray-600">Karosserieform</p>
+									<p class="font-semibold">{technicalData.bodyText}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Farbe</p>
+									<p class="font-semibold">{technicalData.colorText}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Antrieb</p>
+									<p class="font-semibold">{technicalData.driveText}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Getriebe</p>
+									<p class="font-semibold">{technicalData.gearTypeText}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Türen</p>
+									<p class="font-semibold">{technicalData.doors}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Sitze</p>
+									<p class="font-semibold">{technicalData.seats}</p>
+								</div>
+							</div>
+							<div class="space-y-3">
+								<div>
+									<p class="text-sm text-gray-600">Verbrauch</p>
+									<p class="font-semibold">{technicalData.combinedConsumption} {technicalData.consumptionUnitCode}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">CO₂-Emission</p>
+									<p class="font-semibold">{technicalData.co2Emission} g/km</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Emissionsklasse</p>
+									<p class="font-semibold">{technicalData.emissionClassText}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Leergewicht</p>
+									<p class="font-semibold">{technicalData.weightNet} kg</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">Vorbesitzer</p>
+									<p class="font-semibold">{technicalData.previousOwners}</p>
+								</div>
+								<div>
+									<p class="text-sm text-gray-600">FIN</p>
+									<p class="font-semibold text-xs">{technicalData.vin}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Equipment -->
+					<div class="bg-white rounded-lg shadow-md p-6">
+						<h2 class="text-2xl font-bold mb-4">Ausstattung</h2>
+
+						{equipment.extra?.length > 0 && (
+							<div class="mb-6">
+								<h3 class="text-lg font-semibold mb-3 text-blue-600">Sonderausstattung</h3>
+								<ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+									{equipment.extra.map((item: any) => (
+										<li class="flex items-start gap-2">
+											<svg class="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+												<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+											</svg>
+											<span class="text-sm" title={item.hoverText}>{item.text}</span>
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
+
+						{equipment.standard?.length > 0 && (
+							<div>
+								<h3 class="text-lg font-semibold mb-3 text-gray-700">Serienausstattung</h3>
+								<div class="max-h-96 overflow-y-auto">
+									<ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+										{equipment.standard.map((item: any) => (
+											<li class="flex items-start gap-2">
+												<svg class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+													<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+												</svg>
+												<span class="text-sm text-gray-700" title={item.hoverText}>{item.text}</span>
+											</li>
+										))}
+									</ul>
+								</div>
+							</div>
+						)}
+					</div>
+
+					<!-- Campaigns -->
+					{campaigns?.campaigns?.length > 0 && (
+						<div class="bg-white rounded-lg shadow-md p-6">
+							<h2 class="text-2xl font-bold mb-4">Aktuelle Angebote</h2>
+							<div class="space-y-4">
+								{campaigns.campaigns.map((campaign: any) => (
+									<div class="border border-green-200 bg-green-50 rounded-lg p-4">
+										<div class="flex justify-between items-start mb-2">
+											<h3 class="font-semibold text-green-900">{campaign.title}</h3>
+											{campaign.discount > 0 && (
+												<span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+													-{formatPrice(campaign.discount)}
+												</span>
+											)}
+										</div>
+										<p class="text-sm text-gray-700">{campaign.text}</p>
+									</div>
+								))}
+							</div>
+						</div>
+					)}
+				</div>
+
+				<!-- Right Column: Contact & Dealer Info -->
+				<div class="space-y-6">
+					<!-- Contact Card -->
+					<div class="bg-white rounded-lg shadow-md p-6 sticky top-4">
+						<h2 class="text-xl font-bold mb-4">Händler kontaktieren</h2>
+
+						<div class="mb-6">
+							<h3 class="font-semibold text-lg mb-2">{dealerDetail.vehicleLocation.name}</h3>
+							<p class="text-sm text-gray-600">
+								{dealerDetail.vehicleLocation.street}<br/>
+								{dealerDetail.vehicleLocation.postalCode} {dealerDetail.vehicleLocation.city}
+							</p>
+						</div>
+
+						{dealerDetail.dealerHouseImage && (
+							<img
+								src={dealerDetail.dealerHouseImage}
+								alt={dealerDetail.vehicleLocation.name}
+								class="w-full h-32 object-cover rounded-lg mb-4"
+							/>
+						)}
+
+						<div class="space-y-3 mb-6">
+							<a
+								href={`tel:${overview.dealerPhoneNumber}`}
+								class="block w-full bg-blue-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+							>
+								📞 {overview.dealerPhoneNumber}
+							</a>
+							<button class="block w-full bg-gray-200 text-gray-800 text-center py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+								✉️ Anfrage senden
+							</button>
+							{overview.reservable && (
+								<button class="block w-full bg-green-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-700 transition">
+									🔒 Jetzt reservieren
+								</button>
+							)}
+						</div>
+
+						{dealerDetail.dealerRatingAverage && (
+							<div class="border-t pt-4">
+								<div class="flex items-center gap-2 mb-2">
+									<span class="text-2xl font-bold">{dealerDetail.dealerRatingAverage.toFixed(1)}</span>
+									<div class="flex text-yellow-400">
+										{'★'.repeat(Math.round(dealerDetail.dealerRatingAverage))}
+									</div>
+								</div>
+								<p class="text-sm text-gray-600">{dealerDetail.dealerRatings} Bewertungen</p>
+							</div>
+						)}
+
+						{dealerDetail.openingTimes && (
+							<div class="border-t pt-4 mt-4">
+								<h4 class="font-semibold mb-2">Öffnungszeiten</h4>
+								<ul class="text-sm text-gray-600 space-y-1">
+									{dealerDetail.openingTimes.filter((time: string) => time).map((time: string) => (
+										<li>{time}</li>
+									))}
+								</ul>
+							</div>
+						)}
+
+						{dealerDetail.employees?.length > 0 && (
+							<div class="border-t pt-4 mt-4">
+								<h4 class="font-semibold mb-3">Ansprechpartner</h4>
+								<div class="space-y-3">
+									{dealerDetail.employees.map((employee: any) => (
+										<div class="flex gap-3">
+											{employee.imageUrl && (
+												<img
+													src={employee.imageUrl}
+													alt={employee.fullname}
+													class="w-12 h-12 rounded-full object-cover"
+												/>
+											)}
+											<div>
+												<p class="font-semibold text-sm">{employee.fullname}</p>
+												<p class="text-xs text-gray-600">{employee.jobDescription}</p>
+												{employee.telephoneNumber && (
+													<a href={`tel:${employee.telephoneNumber}`} class="text-xs text-blue-600 hover:underline">
+														{employee.telephoneNumber}
+													</a>
+												)}
+											</div>
+										</div>
+									))}
+								</div>
+							</div>
+						)}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
