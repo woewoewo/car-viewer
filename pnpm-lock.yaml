@@ -1660,6 +1660,14 @@ packages:
   crossws@0.3.5:
     resolution: {integrity: sha512-ojKiDvcmByhwa8YYqbQI/hg7MEU0NC03+pSdEq4ZUnZR9xXpwk7E43SMNGkn+JxJGPFtNvQ48+vV2p+P1ml5PA==}
 
+  crossws@0.4.5:
+    resolution: {integrity: sha512-wUR89x/Rw7/8t+vn0CmGDYM9TD6VtARGb0LD5jq2wjtMy1vCP4M+sm6N6TigWeTYvnA8MoW29NqqXD0ep0rfBA==}
+    peerDependencies:
+      srvx: '>=0.11.5'
+    peerDependenciesMeta:
+      srvx:
+        optional: true
+
   css-select@5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
 
@@ -3980,6 +3988,7 @@ snapshots:
       - rollup
       - sass
       - sass-embedded
+      - srvx
       - stylus
       - sugarss
       - supports-color
@@ -4482,6 +4491,7 @@ snapshots:
       - ioredis
       - react-native-b4a
       - rollup
+      - srvx
       - supports-color
       - uploadthing
 
@@ -4586,6 +4596,7 @@ snapshots:
       - db0
       - idb-keyval
       - ioredis
+      - srvx
       - uploadthing
 
   '@netlify/open-api@2.53.0': {}
@@ -4666,6 +4677,7 @@ snapshots:
       - ioredis
       - react-native-b4a
       - rollup
+      - srvx
       - supports-color
       - uploadthing
 
@@ -5644,6 +5656,8 @@ snapshots:
     dependencies:
       uncrypto: 0.1.3
 
+  crossws@0.4.5: {}
+
   css-select@5.2.2:
     dependencies:
       boolbase: 1.0.0
@@ -6450,6 +6464,7 @@ snapshots:
       - db0
       - idb-keyval
       - ioredis
+      - srvx
       - uploadthing
 
   iron-webcrypto@1.2.1: {}
@@ -6723,7 +6738,7 @@ snapshots:
       '@parcel/watcher-wasm': 2.5.6
       citty: 0.2.2
       consola: 3.4.2
-      crossws: 0.3.5
+      crossws: 0.4.5
       defu: 6.1.7
       get-port-please: 3.2.0
       h3: 1.15.11
@@ -6737,6 +6752,8 @@ snapshots:
       ufo: 1.6.4
       untun: 0.1.3
       uqr: 0.1.3
+    transitivePeerDependencies:
+      - srvx
 
   locate-path@7.2.0:
     dependencies:
